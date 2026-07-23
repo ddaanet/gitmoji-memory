@@ -15,4 +15,5 @@
 - [enabledPlugins is user-managed](feedback_enabled_plugins_user_managed.md) — plugins must never write `enabledPlugins` in settings.json; it belongs to the user via `/plugin` commands or hand-edit
 - [Post-plan review for inlining](feedback_post_plan_review_for_inlining.md) — after `superpowers:writing-plans`, run a separate pass to collapse over-decomposed tasks and skip subagent ceremony that doesn't pay for itself
 - [`allowed-tools` semantics](reference_allowed_tools_semantics.md) — frontmatter pre-approves the *permission* prompt only, not the sandbox; mid-pattern `*` is supported and crosses `/`; `${CLAUDE_PLUGIN_ROOT}` is not expanded in frontmatter
+- [`just test-uninstall` needs unsandboxed Bash](project_test_uninstall_needs_unsandboxed_bash.md) — it spawns a nested `claude -p`; sandboxed runs fail on `~/.claude/session-env/` and the suite outlasts the 120s default timeout
 - [Sandbox phantom untracked files](reference_sandbox_phantom_untracked.md) — `.claude/{agents,commands,skills}` showing as untracked are sandbox-only chardev overlays; re-run `git status` with `dangerouslyDisableSandbox: true` to see the real tree
