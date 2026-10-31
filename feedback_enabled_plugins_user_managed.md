@@ -32,7 +32,6 @@ plugin is loaded). For team-shared opt-in propagation, document
 that users hand-edit `enabledPlugins` in the repo's
 `.claude/settings.json` — don't try to automate it.
 
-Related: [[sandbox-bypass-auto-approved]] (Bash bypass IS
-auto-approved for `.claude/` writes — but that license doesn't
-extend to `enabledPlugins`, which is normatively off-limits even
-though it's technically writable).
+The auto-mode classifier approving a Bash sandbox bypass for
+`.claude/` writes is no license that extends to `enabledPlugins`, which is normatively off-limits even
+though it's technically writable.

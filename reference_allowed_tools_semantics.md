@@ -8,7 +8,7 @@ metadata:
 
 Three facts about `allowed-tools` frontmatter in Claude Code slash commands, verified 2026-05-21:
 
-1. **Permission ≠ sandbox.** `allowed-tools` waives the user-facing permission prompt only. The sandbox is a separate OS-level layer. If the pre-approved Bash call writes outside the sandbox (e.g. under `.git/hooks/`), the model still has to retry with `dangerouslyDisableSandbox: true`, which goes through its own permission flow. In auto-mode the classifier may auto-approve that bypass (see [[sandbox-bypass-auto-approved]]); in default mode the user sees a separate prompt.
+1. **Permission ≠ sandbox.** `allowed-tools` waives the user-facing permission prompt only. The sandbox is a separate OS-level layer. If the pre-approved Bash call writes outside the sandbox (e.g. under `.git/hooks/`), the model still has to retry with `dangerouslyDisableSandbox: true`, which goes through its own permission flow. In auto-mode the classifier may auto-approve that bypass; in default mode the user sees a separate prompt.
 
 2. **Mid-pattern `*` is supported and crosses `/`.** Per https://code.claude.com/docs/en/permissions.md ("Wildcards"), `*` may appear at any position — beginning, middle, or end — and matches arbitrary substrings including path separators. So `Bash(bash *scripts/uninstall-hook.sh)` matches `bash /Users/david/.claude/plugins/cache/ddaanet/gitmoji/scripts/uninstall-hook.sh`. The dominant in-the-wild form `Bash(cmd:*)` is a different idiom — colon-prefixed wildcard for subcommand prefix matching.
 

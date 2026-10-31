@@ -22,7 +22,7 @@ is a git clone that only refreshes on `marketplace update`; the payload under
 keeps serving the old version dir until `plugin update`; and for gitmoji
 specifically, `session-materialize.sh` copies from *its own* `script_dir`, so
 every repo re-materializes the stale hook at each SessionStart. A released fix
-that nothing has pulled is invisible everywhere. See [[ddaanet-marketplace-repo]].
+that nothing has pulled is invisible everywhere.
 
 **How to apply:** treat the two `claude plugin ...` commands as the tail of the
 release cascade, then verify the payload actually changed (e.g.
